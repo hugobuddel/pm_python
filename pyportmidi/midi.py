@@ -262,7 +262,7 @@ class Input(object):
         exits -- this is particularly difficult under Windows.
         """
         _check_init()
-        if not (self._input is None):
+        if self._input is not None:
             self._input.Close()
         self._input = None
 
@@ -403,7 +403,7 @@ class Output(object):
         exits -- this is particularly difficult under Windows.
         """
         _check_init()
-        if not (self._output is None):
+        if self._output is not None:
             self._output.Close()
         self._output = None
 

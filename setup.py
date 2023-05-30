@@ -75,12 +75,12 @@ if "-setuptools" in sys.argv:
     from setuptools import setup, Command
     sys.argv.remove ("-setuptools")
 
-    EXTRAS.update({'include_package_data': True,
-                   'install_requires': [],
-                   'zip_safe': False,
-                   'test_suite' : 'pyportmidi.tests',
-                   }
-    )
+    EXTRAS |= {
+        'include_package_data': True,
+        'install_requires': [],
+        'zip_safe': False,
+        'test_suite': 'pyportmidi.tests',
+    }
 
 
 # test command.  For doing 'python setup.py test'
@@ -131,7 +131,7 @@ PACKAGEDATA = {
 }
 
 
-PACKAGEDATA.update(METADATA)
+PACKAGEDATA |= METADATA
 PACKAGEDATA.update(EXTRAS)
 
 
